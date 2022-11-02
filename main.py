@@ -7,6 +7,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from utils import transform_column_to_onehot, split_data_and_train_model, transform_data_to_predict, predict_and_evaluate_model, train_with_kFold
 
+st.set_page_config(page_title='Linear Regression')
+
 def resetSessionState():
     st.session_state['trained'] = False
     st.session_state['loss'] = [0, 0]
