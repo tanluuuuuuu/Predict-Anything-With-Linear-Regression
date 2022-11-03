@@ -19,9 +19,14 @@ if __name__=='__main__':
         st.session_state['trained'] = False
         st.session_state['loss'] = [0, 0]
         st.session_state['model'] = None
+        
+    st.title("Play with Linear Regression")
     
-    uploaded_file = st.file_uploader("Choose a file")
+    uploaded_file = st.file_uploader("Let's upload your dataset")
     if uploaded_file is not None:
+        if (uploaded_file.name[-3:] != 'csv'):
+            st.warning("Please up load file csv")
+            st.stop()
         try:
             df = pd.read_csv(uploaded_file)
             st.write(df)
